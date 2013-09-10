@@ -9,3 +9,37 @@
 .progress{
 	height: 1em
 }
+
+.container {
+    width: 800px;
+}
+.progressbar {
+    background-color: black;
+    border-radius: 13px;
+    /* (height of inner div) / 2 + padding */
+    padding: 3px;
+    block: inline;
+}
+#block {
+    font-size: 20pt;
+    font-family: Arial;
+    width: 800px;
+    height: 800px;
+}
+#progress-words>div {
+    background-color: blue;
+}
+#progress-time>div {
+    background-color: green;
+}
+.progressbar > div {
+    background-color: orange;
+    width: 0%;
+    /* Adjust with JavaScript */
+    height: 20px;
+    border-radius: 10px;
+}
+
+#thanks, #error, #submitting, #submit_button {
+	display: none;
+}
