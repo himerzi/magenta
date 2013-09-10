@@ -1,0 +1,11 @@
+#block, #block:focus,#block:hover, #block:active{
+	border:0;
+	outline: none;
+	resize:none;
+	height: 768px;
+	box-shadow: none;
+	webkit-box-shadow: none;
+}
+.progress{
+	height: 1em
+}
