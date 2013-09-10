@@ -6,31 +6,29 @@
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Magenta</title>
-
   <script src="http://www.parsecdn.com/js/parse-1.2.10.min.js"></script>
   <link rel="stylesheet" href="css/foundation.css">
   <link rel="stylesheet" href="css/app.css">
   <script src="js/vendor/custom.modernizr.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-
 </head>
 <body>
 
 	<div class="row">
-		<div class="large-12 columns">
+		<div class="large-8 columns">
 
 			<h2>The meaning of your existence?</h2>
 
       <section id="state">
 			<ul class="small-block-grid-2 message">
 			  <li>
-          <span id="countdown-words">240 words remaining</span>
-          <button id="submit_button">Submit your words</button>
+          <span id="countdown-words">3 words to go</span>
         </li>
 			  <li>
 			  	<span id="countdown-time">2 minutes remaining</span>
 			  </li>
 			</ul>
+      <center><button id="submit_button">Submit your words</button></center>
       </section>
 
 			<hr />
@@ -38,18 +36,11 @@
 	</div>
 
 	<div class="row">
-		<div class="large-12 columns">
-
-			<!-- Grid Example -->
-			<div class="row">
-				<div class="large-12 columns">
-          <div id="enter">
-					   <textarea id="block" autofocus></textarea>
-          </div>
-				</div>
-			</div>
+		<div class="large-8 columns">
+      <div id="enter">
+			   <textarea id="block" autofocus></textarea>
+      </div>
 		</div>
-
 	</div>
 
   <script>

@@ -3,7 +3,7 @@ var wordCount = 0
 var timeSet = false
 var interval;
 var minutes = 0;
-var seconds = 3;
+var seconds = 30;
 var sent = false;
 var duration = 0;
 
@@ -41,7 +41,7 @@ $(document).ready(function() {
 	}
 	
 	function submitEntry() {
-		$(".message").innerHTML = "Submiting your words...";
+		$("#state").html("Saving...");
 		//send to parse
 		var Entries = Parse.Object.extend("Entries");
 		var entry = new Entries;
@@ -50,7 +50,7 @@ $(document).ready(function() {
 		entry.set("entryText",entryText);
 		entry.set("duration", duration);
 		entry.set("wordCount", wordCount);
-		
+
 		entry.save(null, {
 			success: function(entry) {
 				console.log("entry added to db");
@@ -85,7 +85,7 @@ $(document).ready(function() {
 	
 	    wordCount = countWords($("#block").val());
 		if (wordCount >= words) {
-			$("#countdown-words").hide();
+			//$("#countdown-words").hide();
 			$("#submit_button").fadeIn('slow');
 		}
 	    $('#progress-words > div').css('width', (wordCount / words) * 100 + '%')
