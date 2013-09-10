@@ -5,13 +5,11 @@
 <head>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Foundation 4</title>
+  <title>Magenta</title>
 
-  
+  <script src="http://www.parsecdn.com/js/parse-1.2.10.min.js"></script>
   <link rel="stylesheet" href="css/foundation.css">
   <link rel="stylesheet" href="css/app.css">
-  
-
   <script src="js/vendor/custom.modernizr.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 
@@ -21,13 +19,19 @@
 	<div class="row">
 		<div class="large-12 columns">
 
-			<h2>The meaning of your existance?</h2>
-			<ul class="small-block-grid-2">
-			  <li class="fit"><h6 class="subheader">240 words remaining</h6></li>
+			<h2>The meaning of your existence?</h2>
+
+      <section id="state">
+			<ul class="small-block-grid-2 message">
 			  <li>
-			  	<h6 class="subheader">20 minutes remaining</h6>
+          <span id="countdown-words">240 words remaining</span>
+          <button id="submit_button">Submit your words</button>
+        </li>
+			  <li>
+			  	<span id="countdown-time">2 minutes remaining</span>
 			  </li>
 			</ul>
+      </section>
 
 			<hr />
 		</div>
@@ -39,35 +43,11 @@
 			<!-- Grid Example -->
 			<div class="row">
 				<div class="large-12 columns">
-					<textarea id="block" autofocus>The wind spreads the snow all around the yard- my mind races in all directions, but no direction points towards her, no direction points home.
-
-I finally close the blind, put on the boots, and walk out the door.
-
-There’s wood to be chopped- heat to be gathered. I feel the axe through the gloves, slipping easy down, the weight of the tool does most of the work while I guide. While chopping I can hear a beat in my head, external to the act, but pacing it nevertheless.
-
-I had already gathered all the fuel needed for a week when I saw the bird land on the porch railing. It looked at me suspiciously. I returned the sentiment.
-
-“You alright there?”
-
-It twitches its head down then right back up. That’s when I notice a shiver.
-
-“Why haven’t you gone south yet?”
-
-It shivers some more- almost saying “no”.
-
-“That’s right, I don’t care much for the hot climates either. Let’s make you more comfortable.”
-
-I take the knife out of my pocket and choose the driest piece of timber. I start carving out strands- almost shaves- of wood. I make a bed of kindling then add in fatter and fatter pieces. The final pieces resemble breadsticks.
-
-I light the kindling with my lighter then light a cigarette from the fire. I’m looking towards the sunlight as the bird lands nearby. I inhale hot smoke and cold air into my lungs and exhale my small mark on this world.
-
-- See more at: http://250words.org/#sthash.G7Keam6x.dpuf</textarea>
-					
+          <div id="enter">
+					   <textarea id="block" autofocus></textarea>
+          </div>
 				</div>
 			</div>
-		
-
-
 		</div>
 
 	</div>
@@ -77,46 +57,13 @@ I light the kindling with my lighter then light a cigarette from the fire. I’m
   ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
   '.js><\/script>')
   </script>
-  
+  <script src="js/main.js"></script>
   <script src="js/foundation.min.js"></script>
-  <!--
-  
-  <script src="js/foundation/foundation.js"></script>
-  
-  <script src="js/foundation/foundation.interchange.js"></script>
-  
-  <script src="js/foundation/foundation.abide.js"></script>
-  
-  <script src="js/foundation/foundation.dropdown.js"></script>
-  
-  <script src="js/foundation/foundation.placeholder.js"></script>
-  
-  <script src="js/foundation/foundation.forms.js"></script>
-  
-  <script src="js/foundation/foundation.alerts.js"></script>
-  
-  <script src="js/foundation/foundation.magellan.js"></script>
-  
-  <script src="js/foundation/foundation.reveal.js"></script>
-  
-  <script src="js/foundation/foundation.tooltips.js"></script>
-  
-  <script src="js/foundation/foundation.clearing.js"></script>
-  
-  <script src="js/foundation/foundation.cookie.js"></script>
-  
-  <script src="js/foundation/foundation.joyride.js"></script>
-  
-  <script src="js/foundation/foundation.orbit.js"></script>
-  
-  <script src="js/foundation/foundation.section.js"></script>
-  
-  <script src="js/foundation/foundation.topbar.js"></script>
-  
-  -->
-  
+
   <script>
     $(document).foundation();
+
+    Parse.initialize("9wVkaPz9PCBLyC1qPpAdnJgPeowyOpgMck6NKnUr", "Im58CF8Hi2U8l428VqPwe3Z9XjzEFuoRrxn0WJ1v");
   </script>
 </body>
 </html>
