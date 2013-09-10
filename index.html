@@ -6,18 +6,16 @@
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Magenta</title>
-
   <script src="http://www.parsecdn.com/js/parse-1.2.10.min.js"></script>
   <link rel="stylesheet" href="css/foundation.css">
   <link rel="stylesheet" href="css/app.css">
   <script src="js/vendor/custom.modernizr.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-
 </head>
 <body>
 
 	<div class="row">
-		<div class="large-12 columns">
+		<div class="large-8 columns">
 
 			<h2>Who's the person you most enjoyed spending time with in the past week? Why?</h2>
 
@@ -25,12 +23,12 @@
 			<ul class="small-block-grid-2 message">
 			  <li>
           <span id="countdown-words"></span>
-          <button id="submit_button">Submit your words</button>
         </li>
 			  <li>
 			  	<span id="countdown-time"></span>
 			  </li>
 			</ul>
+      <center><button id="submit_button">Submit your words</button></center>
       </section>
 
 			<hr />
@@ -38,18 +36,11 @@
 	</div>
 
 	<div class="row">
-		<div class="large-12 columns">
-
-			<!-- Grid Example -->
-			<div class="row">
-				<div class="large-12 columns">
-          <div id="enter">
-					   <textarea id="block" autofocus></textarea>
-          </div>
-				</div>
-			</div>
+		<div class="large-8 columns">
+      <div id="enter">
+			   <textarea id="block" autofocus></textarea>
+      </div>
 		</div>
-
 	</div>
 
   <script>
@@ -58,11 +49,11 @@
   '.js><\/script>')
   </script>
   <script src="js/main.js"></script>
+  <script src="js/sjcl.js"></script>
   <script src="js/foundation.min.js"></script>
 
   <script>
     $(document).foundation();
-
     Parse.initialize("9wVkaPz9PCBLyC1qPpAdnJgPeowyOpgMck6NKnUr", "Im58CF8Hi2U8l428VqPwe3Z9XjzEFuoRrxn0WJ1v");
   </script>
 </body>

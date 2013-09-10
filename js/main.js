@@ -2,7 +2,7 @@ var words = 150
 var wordCount = 0
 var timeSet = false
 var interval;
-var minutes = 5;
+var minutes = 6;
 var seconds = 0;
 var sent = false;
 var duration = 0;
@@ -45,11 +45,12 @@ $(document).ready(function() {
 	}
 
 	function submitEntry() {
-		$(".message").innerHTML = "Submiting your words...";
-		//send to parse
+		$("#state").html("Saving...");
+
 		var Entries = Parse.Object.extend("Entries");
 		var Users = Parse.Object.extend("MagentaUser");
 		var entry = new Entries;
+
 		var userID = getURLParameter("uid")
 		var user = undefined
 
@@ -58,7 +59,8 @@ $(document).ready(function() {
 		  success: function(usr) {
 		  	user = usr;
 		  	entryText = $("#block").val();
-		  	entry.set("entryText",entryText);
+		  	encText = sjcl.encrypt(userID, entryText);
+		  	entry.set("entryText",encText);
 		  	entry.set("duration", duration);
 		  	entry.set("wordCount", wordCount);
 		  	entry.set("parent", user);
@@ -70,7 +72,7 @@ $(document).ready(function() {
 		  			sent = true;
 		  		},
 		  		error: function(entry, error) {
-
+		  			$("#state").html("Saving failed, sorry");
 		  		}
 		  	});
 		  },
@@ -106,7 +108,7 @@ $(document).ready(function() {
 
 	    wordCount = countWords($("#block").val());
 		if (wordCount >= words) {
-			$("#countdown-words").hide();
+			//$("#countdown-words").hide();
 			$("#submit_button").fadeIn('slow');
 		}
 	    $('#progress-words > div').css('width', (wordCount / words) * 100 + '%')
