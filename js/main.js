@@ -1,9 +1,9 @@
-var words = 300
+var words = 150
 var wordCount = 0
 var timeSet = false
 var interval;
-var minutes = 0;
-var seconds = 1;
+var minutes = 5;
+var seconds = 0;
 var sent = false;
 var duration = 0;
 
