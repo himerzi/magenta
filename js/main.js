@@ -77,8 +77,7 @@ $(document).ready(function() {
 		  	});
 		  },
 		  error: function(object, error) {
-		    // The object was not retrieved successfully.
-		    // error is a Parse.Error with an error code and description.
+		  	$("#state").html("No user id");
 		  }
 		});
 
@@ -108,10 +107,11 @@ $(document).ready(function() {
 
 	    wordCount = countWords($("#block").val());
 		if (wordCount >= words) {
-			//$("#countdown-words").hide();
-			$("#submit_button").fadeIn('slow');
+			$('#countdown-words').html('0 words to go, you\'re done!');
+			$("#submit_button").show();
+		} else {
+		    $('#progress-words > div').css('width', (wordCount / words) * 100 + '%')
+		    $('#countdown-words').html(words - wordCount + ' words to go');
 		}
-	    $('#progress-words > div').css('width', (wordCount / words) * 100 + '%')
-	    $('#countdown-words').html(words - wordCount + ' words to go');
 	});
 });
