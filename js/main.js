@@ -3,11 +3,7 @@ var wordCount = 0
 var timeSet = false
 var interval;
 var minutes = 0;
-<<<<<<< HEAD
-var seconds = 30;
-=======
-var seconds = 1;
->>>>>>> 77f54a9f2f4b1037821389b905b610b6831dfa4c
+var seconds = 3;
 var sent = false;
 var duration = 0;
 
@@ -50,7 +46,7 @@ $(document).ready(function() {
 
 	function submitEntry() {
 		$("#state").html("Saving...");
-		//send to parse
+
 		var Entries = Parse.Object.extend("Entries");
 		var Users = Parse.Object.extend("MagentaUser");
 		var entry = new Entries;
@@ -63,7 +59,8 @@ $(document).ready(function() {
 		  success: function(usr) {
 		  	user = usr;
 		  	entryText = $("#block").val();
-		  	entry.set("entryText",entryText);
+		  	encText = sjcl.encrypt(userID, entryText);
+		  	entry.set("entryText",encText);
 		  	entry.set("duration", duration);
 		  	entry.set("wordCount", wordCount);
 		  	entry.set("parent", user);
@@ -75,7 +72,7 @@ $(document).ready(function() {
 		  			sent = true;
 		  		},
 		  		error: function(entry, error) {
-
+		  			$("#state").html("Saving failed, sorry");
 		  		}
 		  	});
 		  },
